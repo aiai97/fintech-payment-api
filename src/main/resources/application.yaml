@@ -1,17 +1,17 @@
 spring:
   rabbitmq:
-    host: ${RABBIT_HOST}
-    port: ${RABBIT_PORT}
-    username: ${RABBIT_USER}
-    password: ${RABBIT_PASSWORD}
+    host: ${RABBIT_HOST:localhost} # in real world, it is not right to write password and it should be in a secret manager or environment variable
+    port: ${RABBIT_PORT:5673}
+    username: ${RABBIT_USER:guest}
+    password: ${RABBIT_PASSWORD:guest}
     listener:
       simple:
         trusted-packages: com.pay.payment_api
 
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: ${DB_URL:jdbc:postgresql://localhost:5434/payment_db}
+    username: ${DB_USER:payment_user}
+    password: ${DB_PASSWORD:payment_pass}
     driver-class-name: org.postgresql.Driver
 
   jpa:

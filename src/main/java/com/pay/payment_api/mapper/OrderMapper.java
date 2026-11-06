@@ -4,6 +4,7 @@ import com.pay.payment_api.dto.CreateOrderRequest;
 import com.pay.payment_api.dto.OrderResponse;
 import com.pay.payment_api.entity.Order;
 
+// isolate business transformation logic from controller and service layer, so that it can be reused in other places if needed
 public class OrderMapper {
 
     public static Order toEntity(CreateOrderRequest request){

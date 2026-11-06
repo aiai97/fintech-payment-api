@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
                 ex.getMessage(),
                 HttpStatus.BAD_REQUEST.value(),
                 LocalDateTime.now()
-        );
+        );// why it happened, what happened and when it happened
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
